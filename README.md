@@ -167,14 +167,14 @@ Add following to MainApplication.java
 
 ```diff
 //...
-+import org.wonday.orientation.OrientationPackage;
++import com.orientationlocker.OrientationLockerPackage;
     @Override
     protected List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
       // packages.add(new MyReactNativePackage());
-+      packages.add(new OrientationPackage());
++      packages.add(new OrientationLockerPackage());
       return packages;
     }
 //...
@@ -245,10 +245,10 @@ public class MainActivity extends ReactActivity {
 Add following to MainApplication.java
 
 ```diff
-+import org.wonday.orientation.OrientationActivityLifecycle;
++import com.orientationlocker.OrientationActivityLifecycle;
   @Override
   public void onCreate() {
-+    registerActivityLifecycleCallbacks(OrientationActivityLifecycle.getInstance());
++    registerActivityLifecycleCallbacks(OrientationActivityLifecycle.Companion.getInstance());
   }
 ```
 
