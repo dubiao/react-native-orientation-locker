@@ -8,5 +8,5 @@
 
 @interface OrientationLocker : RCTEventEmitter <RCTBridgeModule>
 #endif
-
++ (UIInterfaceOrientationMask)getOrientation;
 @end
