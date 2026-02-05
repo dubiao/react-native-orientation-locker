@@ -1,5 +1,6 @@
 package com.orientationlocker
 
+import android.app.Activity
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.ContentResolver
@@ -38,6 +39,7 @@ class OrientationLockerModule internal constructor(context: ReactApplicationCont
   private var lastOrientationValue = ""
   private var lastDeviceOrientationValue = ""
 
+  private var currentActivity: Activity?;
   init {
     mReceiver =
       (object : BroadcastReceiver() {
@@ -53,6 +55,7 @@ class OrientationLockerModule internal constructor(context: ReactApplicationCont
         }
       })
     OrientationActivityLifecycle.getInstance().registerListeners(this)
+    currentActivity = reactApplicationContext.currentActivity
   }
 
   override fun getName(): String = NAME
