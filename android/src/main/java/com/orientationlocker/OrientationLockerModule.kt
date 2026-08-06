@@ -277,8 +277,8 @@ class OrientationLockerModule internal constructor(context: ReactApplicationCont
   }
 
   @ReactMethod
-  override fun removeListeners(count: Int) {
-    listenerCount -= count
+  override fun removeListeners(count: Double) {
+    listenerCount -= count.toInt()
     // Keep: Required for RN built in Event Emitter Calls.
   }
 
